@@ -25,6 +25,11 @@ namespace ContactsApp
         public ContactsDetailsWindow(Contact contact)
         {
             InitializeComponent();
+
+            //to start/place the window at center
+            Owner = Application.Current.MainWindow;
+            WindowStartupLocation=WindowStartupLocation.CenterScreen;
+
             this.contact = contact;
             NameBox.Text = contact.Name;
             EmailBox.Text=contact.Email;

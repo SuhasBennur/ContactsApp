@@ -4,20 +4,29 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ContactsApp"
+        xmlns:uc="clr-namespace:ContactsApp.Controls"
         mc:Ignorable="d"
+        ResizeMode="NoResize"
         Title="Contacts" Height="425" Width="400" WindowStartupLocation="CenterScreen">
     <Grid>
         <StackPanel Margin="10">
             <Button Content="New Contact" Click="OnNewButtonClick" Margin="0,0,0,5"/>
+            <TextBlock Text="Start typing your contact name in below text box..." FontWeight="Black" FontFamily="Constantia"/>
             <TextBox Margin="0,5,0,5" TextChanged="tb_textchanged" />
             <ListView x:Name="ContactsListView" SelectionChanged="ContactsListView_selectionChanged" Height="350" Margin="0,5,0,0">
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                    </Style>
+                </ListView.ItemContainerStyle>
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel>
+                        <!--<StackPanel>
                             <TextBlock Text="{Binding Name}" FontSize="30" FontWeight="Bold"/>
                             <TextBlock Text="{Binding Email}" FontSize="25" Foreground="DodgerBlue" />
                             <TextBlock Text="{Binding Phone}" FontSize="15" FontStyle="Italic"/>
-                        </StackPanel>
+                        </StackPanel>-->
+                        <uc:ContactControl Contact="{Binding}"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

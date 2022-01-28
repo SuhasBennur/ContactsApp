@@ -27,6 +27,7 @@ namespace ContactsApp
 
         public MainWindow()
         {
+            
             contacts = new List<Contact>();
             InitializeComponent();
             readdb(); 
