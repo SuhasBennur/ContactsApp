@@ -13,5 +13,10 @@ namespace ContactsApp
     /// </summary>
     public partial class App : Application
     {
+        static string dbName = "Contacts.db";
+        static string pathvar = @";D:\demo projects\ContactsApp\db";
+
+        static string folderPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+        public static string dbPath = System.IO.Path.Combine(folderPath, dbName);
     }
 }

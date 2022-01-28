@@ -9,6 +9,18 @@
     <Grid>
         <StackPanel Margin="10">
             <Button Content="New Contact" Click="OnNewButtonClick" Margin="0,0,0,5"/>
+            <TextBox Margin="0,5,0,5" TextChanged="tb_textchanged" />
+            <ListView x:Name="ContactsListView" SelectionChanged="ContactsListView_selectionChanged" Height="350" Margin="0,5,0,0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Name}" FontSize="30" FontWeight="Bold"/>
+                            <TextBlock Text="{Binding Email}" FontSize="25" Foreground="DodgerBlue" />
+                            <TextBlock Text="{Binding Phone}" FontSize="15" FontStyle="Italic"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackPanel>
     </Grid>
 </Window>

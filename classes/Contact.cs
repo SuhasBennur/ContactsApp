@@ -17,5 +17,10 @@ namespace ContactsApp.classes
         public string Email { get; set; }
         [MaxLength(10)]
         public string Phone { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Name} -  {Email} - {Phone}";
+        }
     }
 }
