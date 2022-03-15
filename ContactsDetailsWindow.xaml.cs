@@ -19,6 +19,7 @@ namespace ContactsApp
     /// <summary>
     /// Interaction logic for ContactsDetailsWindow.xaml
     /// </summary>
+    //suhas
     public partial class ContactsDetailsWindow : Window
     {
         Contact contact;
